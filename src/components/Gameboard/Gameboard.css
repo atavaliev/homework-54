@@ -1,0 +1,9 @@
+.gameboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-width: 390px;
+    width: fit-content;
+    border: 1px solid #000;
+    padding: 8px;
+}
