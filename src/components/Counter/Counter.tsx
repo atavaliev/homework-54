@@ -1,10 +1,13 @@
 import React from 'react';
 import './Counter.css';
 
-const Counter = () => {
+interface IProps {
+    tries:number
+}
+const Counter:React.FC<IProps> = ({tries}) => {
     return (
         <div className="counter">
-            Tries: X
+            Tries: {tries}
         </div>
     );
 };

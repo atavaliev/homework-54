@@ -4,3 +4,15 @@
     background: cornflowerblue;
     cursor: pointer;
 }
+
+.square.clicked {
+    background:transparent;
+}
+
+.square > div.hasRing {
+    width: 100%;
+    height: 100%;
+    background: gold;
+    position: relative;
+    z-index: -1;
+}
