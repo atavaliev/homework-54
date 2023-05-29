@@ -12,7 +12,7 @@ const Modal:React.FC<IProps> = ({tries, modalOnTop}) => {
 
     return (
         <div className={classClicked}>
-            You Can Find The Ring With a {tries}!
+            You Can Find The Ring With a  {tries > 1 ? `${tries} tries` : "FIRST try"}!
         </div>
     );
 };
