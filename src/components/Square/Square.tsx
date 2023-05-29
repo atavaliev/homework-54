@@ -1,6 +1,7 @@
 import React from 'react';
 import './Square.css';
 import {ISquare} from "../../types";
+import Ring from "../Ring";
 
 interface IProps extends ISquare{
     onSquareClick:React.MouseEventHandler
@@ -9,11 +10,10 @@ interface IProps extends ISquare{
 const Square: React.FC<IProps> = ({hasItem, clicked, onSquareClick}) => {
 
     const squareClasses =  `square  ${clicked ? 'clicked' : ''}`;
-    const ring = `${hasItem ? 'hasRing' : ''}`
 
     return (
         <div className={squareClasses} onClick={onSquareClick}>
-            <div className={ring}></div>
+            {hasItem && <Ring/>}
         </div>
     );
 };
