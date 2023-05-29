@@ -9,11 +9,12 @@ interface IProps {
     onSquareClick:(index:number)=> void;
     stopGame:boolean;
     tries:number;
+    modalOnTop:boolean;
 }
 
-const GameBoard:React.FC<IProps> = ({items, onSquareClick, stopGame, tries}) => {
+const GameBoard:React.FC<IProps> = ({items, onSquareClick, stopGame, tries, modalOnTop}) => {
 
-    const classNames = `gameboard ${stopGame ? 'stop-game' : ''}`
+    const classNames = `gameboard ${stopGame ? 'stop-game' : ''}`;
 
     return (
         <div className={classNames}>
@@ -28,7 +29,7 @@ const GameBoard:React.FC<IProps> = ({items, onSquareClick, stopGame, tries}) => 
                 })
             }
 
-            {stopGame && <Modal tries={tries}/>}
+            {stopGame && <Modal tries={tries} modalOnTop={modalOnTop}/>}
 
         </div>
     );

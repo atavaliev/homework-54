@@ -5,8 +5,16 @@
     padding: 30px;
     font-size: 20px;
     left: 50%;
-    top: 30px;
+
     transform: translateX(-50%);
     background: #fff;
     z-index: 9;
+}
+
+.modal.onTop {
+    top: 30px;
+}
+
+.modal.onBottom {
+    bottom: 30px;
 }
