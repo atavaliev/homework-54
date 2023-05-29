@@ -1,8 +1,14 @@
 import React from 'react';
+import './Button.css';
 
-const Button = () => {
+
+interface IProps {
+    onClick:React.MouseEventHandler
+}
+
+const Button:React.FC<IProps> = ({onClick}) => {
     return (
-        <button className="button">Reset</button>
+        <button className="button" onClick={onClick}>Reset</button>
     );
 };
 

@@ -9,10 +9,12 @@ interface IProps extends ISquare{
 
 const Square: React.FC<IProps> = ({hasItem, clicked, onSquareClick}) => {
 
-    const squareClasses =  `square  ${clicked ? 'clicked' : ''}`;
+    const classClicked =  `square  ${clicked ? 'clicked' : ''} ${hasItem ? 'has-item' : ''}`;
+
+
 
     return (
-        <div className={squareClasses} onClick={onSquareClick}>
+        <div className={classClicked} onClick={onSquareClick}>
             {hasItem && <Ring/>}
         </div>
     );

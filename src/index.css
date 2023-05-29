@@ -18,3 +18,7 @@ body,
 #root{
   height: 100%;
 }
+
+body {
+  background: #2bdcc180;
+}

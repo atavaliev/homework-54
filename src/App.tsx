@@ -6,10 +6,9 @@ import Button from "./components/Button/Button";
 import {ISquare} from "./types";
 
 
-
-
 const App = () => {
 
+    // Create Array of Square Objects
     const createItems = (size: number):ISquare[] => {
 
         let arr:ISquare[] = [];
@@ -26,11 +25,13 @@ const App = () => {
         return arr;
     }
 
-    const [items, setItems] = useState<ISquare[]>(createItems(36))
+    const [items, setItems] = useState<ISquare[]>(createItems(36));
     const [tries, setTries] = useState<number>(0);
+    const [stopGame, setStopGame] = useState<boolean>(false);
 
     const clickHandle = (index:number) => {
-        console.log(index)
+
+        // Open/toggle squares
         if(!items[index].clicked) {
             setItems(prevState => {
                 const copyItems = [...prevState];
@@ -39,14 +40,33 @@ const App = () => {
             })
             setTries(prevState => prevState + 1);
         }
+
+        // Block GameBoard for clicks if Ring founded
+        if(items[index].hasItem) {
+            setStopGame(true);
+        }
+    }
+
+    //Reset Game
+
+    const resetGame = () => {
+        setItems(createItems(36));
+        setTries(0);
+        setStopGame(false);
     }
 
     return (
         <div className="App">
             <div className="inner">
-                <GameBoard items={items} onSquareClick={clickHandle}/>
+                <GameBoard
+                    items={items}
+                    onSquareClick={clickHandle}
+                    stopGame={stopGame}
+                    tries={tries}
+
+                />
                 <Counter tries={tries}/>
-                <Button/>
+                <Button onClick={resetGame}/>
             </div>
         </div>
     );

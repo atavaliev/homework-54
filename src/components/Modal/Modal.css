@@ -1,0 +1,12 @@
+.modal {
+    width: 300px;
+    position: absolute;
+
+    padding: 30px;
+    font-size: 20px;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    background: #fff;
+    z-index: 9;
+}

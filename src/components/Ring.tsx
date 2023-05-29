@@ -2,7 +2,7 @@ import React from 'react';
 
 const Ring = () => {
     return (
-        <div style={{position:'relative', zIndex:-1}}>
+
             <svg version="1.1" id="_x35_" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" >
 <g>
 	<polygon style={{opacity:0.1,fill:'#FFFFFF'}} points="432.885,369.137 432.885,369.137 432.885,369.137 	"/>
@@ -169,7 +169,6 @@ const Ring = () => {
 </g>
 </svg>
 
-        </div>
     );
 };
 

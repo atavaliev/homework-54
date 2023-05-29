@@ -2,17 +2,21 @@ import React from 'react';
 import Square from "../Square/Square";
 import './Gameboard.css';
 import {ISquare} from "../../types";
+import Modal from "../Modal/Modal";
 
 interface IProps {
     items:ISquare[];
     onSquareClick:(index:number)=> void;
+    stopGame:boolean;
+    tries:number
 }
 
-const GameBoard:React.FC<IProps> = ({items, onSquareClick}) => {
+const GameBoard:React.FC<IProps> = ({items, onSquareClick, stopGame, tries}) => {
+
+    const classNames = `gameboard ${stopGame ? 'stop-game' : ''}`
 
     return (
-        <div className="gameboard">
-
+        <div className={classNames}>
             {
                 items.map((i,index) => {
                    return  <Square
@@ -23,6 +27,9 @@ const GameBoard:React.FC<IProps> = ({items, onSquareClick}) => {
                    />
                 })
             }
+
+            {stopGame && <Modal tries={tries}/>}
+
 
         </div>
     );
