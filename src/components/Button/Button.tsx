@@ -1,9 +1,8 @@
 import React from 'react';
 import './Button.css';
 
-
 interface IProps {
-    onClick:React.MouseEventHandler
+    onClick:React.MouseEventHandler;
 }
 
 const Button:React.FC<IProps> = ({onClick}) => {

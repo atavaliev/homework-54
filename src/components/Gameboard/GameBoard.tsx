@@ -8,7 +8,7 @@ interface IProps {
     items:ISquare[];
     onSquareClick:(index:number)=> void;
     stopGame:boolean;
-    tries:number
+    tries:number;
 }
 
 const GameBoard:React.FC<IProps> = ({items, onSquareClick, stopGame, tries}) => {
@@ -29,7 +29,6 @@ const GameBoard:React.FC<IProps> = ({items, onSquareClick, stopGame, tries}) => 
             }
 
             {stopGame && <Modal tries={tries}/>}
-
 
         </div>
     );

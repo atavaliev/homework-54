@@ -16,12 +16,10 @@ const App = () => {
 
         for(let i:number = 1; i < size; i++) {
             if(randomNumber === i) {
-                console.log("Ring", i)
                 arr.push({hasItem: true, clicked: false});
             }
             arr.push({hasItem: false, clicked: false})
         }
-
         return arr;
     }
 
@@ -63,7 +61,6 @@ const App = () => {
                     onSquareClick={clickHandle}
                     stopGame={stopGame}
                     tries={tries}
-
                 />
                 <Counter tries={tries}/>
                 <Button onClick={resetGame}/>

@@ -2,7 +2,7 @@ import React from 'react';
 import './Counter.css';
 
 interface IProps {
-    tries:number
+    tries:number;
 }
 const Counter:React.FC<IProps> = ({tries}) => {
     return (

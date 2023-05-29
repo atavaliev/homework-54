@@ -3,10 +3,8 @@
     display: flex;
 }
 
-
 .App .inner {
     display: flex;
     flex-direction: column;
-    
     margin: auto;
 }
